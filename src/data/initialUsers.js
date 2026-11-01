@@ -1,0 +1,101 @@
+export const INITIAL_USERS = [
+  {
+    id: "STU-2026-8841",
+    name: "Aarav Sharma",
+    email: "student@academiax.demo",
+    password: "Student123!",
+    role: "student",
+    department: "Computer Science & Engineering",
+    semester: "6th Semester",
+    registeredAt: "2026-08-15",
+    status: "Active",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=250&q=80",
+    phone: "+91 98765 43210"
+  },
+  {
+    id: "INS-2026-104",
+    name: "Dr. Priya Raman",
+    email: "instructor@academiax.demo",
+    password: "Instructor123!",
+    role: "instructor",
+    department: "Artificial Intelligence & Data Science",
+    designation: "Professor & Program Chair",
+    registeredAt: "2025-06-10",
+    status: "Active",
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=250&q=80",
+    phone: "+91 98450 11223"
+  },
+  {
+    id: "ADM-2026-001",
+    name: "Dean Marcus Vance",
+    email: "admin@academiax.demo",
+    password: "Admin123!",
+    role: "admin",
+    department: "Academic Affairs & Registrar",
+    designation: "Chief Academic Officer",
+    registeredAt: "2024-01-05",
+    status: "Active",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=250&q=80",
+    phone: "+91 99112 33445"
+  },
+  {
+    id: "INS-2026-108",
+    name: "Prof. Vikram Deshmukh",
+    email: "vikram.deshmukh@academiax.demo",
+    password: "Password123!",
+    role: "instructor",
+    department: "Computer Science & Engineering",
+    designation: "Associate Professor",
+    registeredAt: "2025-07-12",
+    status: "Active",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=250&q=80"
+  },
+  {
+    id: "INS-2026-112",
+    name: "Dr. Ananya Sen",
+    email: "ananya.sen@academiax.demo",
+    password: "Password123!",
+    role: "instructor",
+    department: "Cybersecurity & Cloud Systems",
+    designation: "Lead Cybersecurity Fellow",
+    registeredAt: "2025-08-20",
+    status: "Active",
+    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=250&q=80"
+  },
+  {
+    id: "INS-2026-115",
+    name: "Prof. Rohan Mukherjee",
+    email: "rohan.mukherjee@academiax.demo",
+    password: "Password123!",
+    role: "instructor",
+    department: "Business and Management",
+    designation: "Distinguished Lecturer in FinTech",
+    registeredAt: "2025-09-01",
+    status: "Active",
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=250&q=80"
+  },
+  {
+    id: "STU-2026-8842",
+    name: "Sneha Patel",
+    email: "sneha.patel@student.academiax.demo",
+    password: "Password123!",
+    role: "student",
+    department: "Computer Science & Engineering",
+    semester: "4th Semester",
+    registeredAt: "2026-08-22",
+    status: "Active",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=250&q=80"
+  },
+  {
+    id: "STU-2026-8843",
+    name: "Karan Mehta",
+    email: "karan.mehta@student.academiax.demo",
+    password: "Password123!",
+    role: "student",
+    department: "Artificial Intelligence",
+    semester: "6th Semester",
+    registeredAt: "2026-09-02",
+    status: "Active",
+    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=250&q=80"
+  }
+];

@@ -1,0 +1,210 @@
+{
+  "info": {
+    "name": "AcademiaX Microservices API",
+    "description": "Postman Collection for AcademiaX Course Enrollment & Payment System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5173/api",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "0. System Health",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["health"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "1. Auth Service",
+      "item": [
+        {
+          "name": "User Login",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"student@academiax.demo\",\n  \"password\": \"Student123!\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "User Register",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Khasimbi Shaik\",\n  \"email\": \"khasimbi.new@example.com\",\n  \"password\": \"Khasimbi123!\",\n  \"role\": \"student\",\n  \"department\": \"Computer Science & Engineering\",\n  \"semester\": \"6th Semester\",\n  \"phone\": \"+91 98765 00000\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/register",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "register"]
+            }
+          }
+        },
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/auth/users",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "users"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Course Service",
+      "item": [
+        {
+          "name": "Get All Courses",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/courses",
+              "host": ["{{baseUrl}}"],
+              "path": ["courses"]
+            }
+          }
+        },
+        {
+          "name": "Get Course By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/courses/CS-301",
+              "host": ["{{baseUrl}}"],
+              "path": ["courses", "CS-301"]
+            }
+          }
+        },
+        {
+          "name": "Create Course",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"CS-701\",\n  \"title\": \"Advanced Cloud Computing\",\n  \"description\": \"Deep dive into multi-cloud systems and Kubernetes orchestration.\",\n  \"instructor\": \"Dr. Elena Rostova\",\n  \"department\": \"Cloud Computing\",\n  \"tuitionFee\": 28000,\n  \"duration\": \"12 Weeks\",\n  \"capacity\": 40,\n  \"enrollmentDeadline\": \"2026-12-31\",\n  \"credits\": 4,\n  \"level\": \"Advanced\",\n  \"status\": \"Active\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/courses",
+              "host": ["{{baseUrl}}"],
+              "path": ["courses"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Enrollment Service",
+      "item": [
+        {
+          "name": "Get All Enrollments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/enrollments",
+              "host": ["{{baseUrl}}"],
+              "path": ["enrollments"]
+            }
+          }
+        },
+        {
+          "name": "Create Enrollment",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"studentId\": \"STU-2026-8841\",\n  \"studentName\": \"Aarav Sharma\",\n  \"courseId\": \"CS-301\",\n  \"courseTitle\": \"Full-Stack Web Architectures & React Enterprise\",\n  \"amount\": 24500,\n  \"status\": \"Pending Payment\",\n  \"paymentStatus\": \"Pending\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/enrollments",
+              "host": ["{{baseUrl}}"],
+              "path": ["enrollments"]
+            }
+          }
+        },
+        {
+          "name": "Cancel Enrollment",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reason\": \"Voluntary student cancellation\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/enrollments/ENR-2026-9003/cancel",
+              "host": ["{{baseUrl}}"],
+              "path": ["enrollments", "ENR-2026-9003", "cancel"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. Payment Service",
+      "item": [
+        {
+          "name": "Get All Payments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/payments",
+              "host": ["{{baseUrl}}"],
+              "path": ["payments"]
+            }
+          }
+        },
+        {
+          "name": "Process Tuition Payment",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"enrollmentId\": \"ENR-2026-9003\",\n  \"studentId\": \"STU-2026-8841\",\n  \"studentName\": \"Aarav Sharma\",\n  \"courseId\": \"SEC-310\",\n  \"courseTitle\": \"Cybersecurity Engineering\",\n  \"amount\": 26000,\n  \"paymentMethod\": \"UPI Demo (aarav@okhdfcbank)\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/payments/process",
+              "host": ["{{baseUrl}}"],
+              "path": ["payments", "process"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+
